@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: taskflow-config
+data:
+  MYSQL_HOST: "mysql-service"
+  MYSQL_DB:   "taskflow"
+  MYSQL_USER: "root"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: taskflow-secret
+type: Opaque
+stringData:
+  MYSQL_PASSWORD: "Root@123"
